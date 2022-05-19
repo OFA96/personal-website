@@ -1,0 +1,163 @@
+<%- include('partials/header'); -%>
+
+<!-- left part of the site start -->
+
+<div class="posts">
+
+    <h1>Home</h1>
+
+    <p> <%= startContent %> </p>
+
+    <hr>
+
+
+
+
+
+    <section>
+        <div class="blog">
+            <div class="container">
+
+                <div class="owl-carousel owl-theme blog-post">
+
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-1.jpg" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-3.jpg" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-2.jpg" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-5.png" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-5.png" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-5.png" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <img src="assets/Blog-post/post-5.png" alt="">
+                        <div class="blog-title">
+                            <h3>Longdon Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="owl-navigation">
+                    <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                    <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <% for (var i=0; i < postsArray.length; i++){  %>
+
+
+
+
+    <div class="post-content">
+        <div class="post-image">
+            <div>
+                <img src="../uploads/<%= postsArray[i].img_name %>" class="img" alt="blog1">
+            </div>
+
+        </div>
+
+        <div class="post-title">
+            <a href="#"><%= postsArray[i].title %></a>
+            <p><%=  postsArray[i].body.substring(0,100) + "..."; %>
+
+            </p>
+
+            <a href="/posts/<%=postsArray[i].title %>"> <button class="btn post-btn">Read More &nbsp; <i
+                        class="fas fa-arrow-right"></i></button> </a>
+
+        </div>
+
+
+    </div>
+
+    <hr>
+
+
+    <%    }; %>
+
+
+</div>
+
+<!-- left part of the site end -->
+
+
+<!-- right side of the body (ads area) start -->
+<aside class="sidebar">
+    <div class="category">
+        <h1>Advertisements Area </h1>
+    </div>
+
+</aside>
+
+<!-- right side of the body (ads area) end  -->
+
+
+
+<%- include('partials/footer'); -%>

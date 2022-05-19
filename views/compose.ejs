@@ -1,0 +1,46 @@
+<%- include('partials/header'); -%>
+
+<!-- left part of the site start -->
+<div class="posts">
+    <h1>
+        Compose Post
+    </h1>
+
+    <form action="/compose" method="post" enctype="multipart/form-data">
+
+        <div class="compose-form-class">
+
+
+            <label>Title:</label>
+            <input class="form-input" type="text" name="postTitle">
+
+            <label>Post:</label>
+
+            <textarea class="form-textarea" name="postBody" rows="5" cols="30"></textarea>
+            <label>Upload an Image</label>
+            <input type="file" name="avatar" required>
+
+        </div>
+
+        <button class="btn-compose" type="submit" name="button">Publish</button>
+
+    </form>
+
+
+
+</div>
+<!-- left part of the site end -->
+
+
+<!-- right side of the body (ads area) start -->
+<aside class="sidebar">
+    <div class="category">
+        <h1>Advertisements Area </h1>
+    </div>
+
+
+</aside>
+<!-- right side of the body (ads area) end -->
+
+
+<%- include('partials/footer'); -%>

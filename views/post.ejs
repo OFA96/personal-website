@@ -1,0 +1,216 @@
+<%- include('partials/header'); -%>
+<!-- left part of the site start -->
+<div class="posts">
+
+
+
+    <div class="post-content">
+
+        <div class="post-image" style="margin-top:0rem;">
+            <h1> <%= Post_sql_array[0].title %></h1>
+            <div>
+                <img src="../uploads/<%= Post_sql_array[0].img_name %>" class="img" alt="blog1">
+            </div>
+
+        </div>
+
+        <div class="post-title" style="padding-top:0rem;">
+
+            <p style="font-size:25px; color: #3f4954;"> <%= Post_sql_array[0].body %> </p>
+
+
+        </div>
+
+
+    </div>
+
+    <hr class="post-hr">
+
+
+    <%for(var i=0; i < comment_sql_array.length; i++){%>
+
+
+    <h1 class="comment-name"><%= comment_sql_array[i].commentCreator %></h1>
+    <h1 class="comment-email"><%=comment_sql_array[i].creatorEmail%></h1>
+    <p>
+        <%=comment_sql_array[i].body %>
+    </p>
+    <hr class="comment-hr">
+
+    <%} %>
+
+
+
+
+
+
+
+
+
+
+    <!-- comment section is start ------------------------ -->
+
+    <h2>
+        Leave a Comment !!!
+    </h2>
+
+    <form action="/comment" method="post">
+
+        <div class="comment-form-class">
+
+
+
+            <input class="form-input" placeholder="Name" type="text" name="commentName">
+
+            <input class="form-input" placeholder="Email" type="text" name="commentEmail">
+
+
+
+            <textarea class="form-textarea" placeholder="Comment body" name="commentBody" rows="5" cols="30"></textarea>
+            <input class="form-input" type="text" name="commentPostTitle_submit" value="<%= Post_sql_array[0].title %>"
+                style="display:none;">
+
+        </div>
+
+        <button class="btn-comment" type="submit" name="button">Comment</button>
+
+    </form>
+
+
+
+
+    <!-- comment section is end -------------X----------- -->
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- left part of the site end -->
+
+<!-- right side of the body (ads area) start -->
+<aside class="sidebar">
+    <div class="category">
+        <h1>Advertisements Area </h1>
+
+        
+    </div>
+
+
+</aside>
+<!-- right side of the body (ads area) end -->
+
+
+</div>
+
+</section>
+
+<!-- site content end---------------- -->
+
+
+
+
+</main>
+<!-- main header section ends -->
+
+
+
+<!-- footer start -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="about-us">
+            <h2>about us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus at aliquid quasi animi nostrum magni
+                rem quisquam aliquam. Recusandae, eum!</p>
+        </div>
+
+
+        <div class="newsletter">
+            <h2>newsletter</h2>
+            <p>stay updated !</p>
+            <form action="/subscribe" method="post">
+                <!-- this is tricky one burh  the space between the input tag and the span tag should be removed !!!!!!!!!!!!!!! -->
+                <input type="text" placeholder="Email" name="newsletterEmail">
+                <button type="submit" name="button">Subscribe !</button>
+                <!-- <span><i class="fas fa-chevron-right"></i></span> -->
+            </form>
+        </div>
+
+
+        <div class="instagram">
+            <h2>instagram</h2>
+            <p>
+                Authors selected instagram posts
+            </p>
+            <div class="flex-row">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+
+            </div>
+
+
+            <div class="flex-row">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+                <img src="../assets/instagram/thumb-card3.png" alt="image">
+
+            </div>
+
+
+        </div>
+        <div class="follow">
+            <h2>follow us</h2>
+
+            <div>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rights flex-row">
+        <h4>
+            Copyright &copy; all rights reserved | made by
+            <a href="https://www.youtube.com" target="_black"> daily tuition <i class="fab fa-youtube"></i> channel</a>
+        </h4>
+    </div>
+
+
+    <div class="move-up">
+        <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+
+    </div>
+
+</footer>
+
+<!-- footer end -->
+
+
+<!-- jquery file -->
+<script src="js/Jquery3.6.0.min.js"></script>
+
+<!-- owl carousel -->
+<script src="js/owl.carousel.min.js"></script>
+
+
+<!-- <script src="js/aos.js"></script> -->
+
+
+<!-- custom javascript -->
+<script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>

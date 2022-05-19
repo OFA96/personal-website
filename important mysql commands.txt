@@ -1,0 +1,24 @@
+DROP DATABASE omar_blog;
+
+DROP TABLE posts;
+
+CREATE TABLE posts(
+	id int auto_increment,
+    title varchar(100),
+    body text, 
+	publish_date datetime default current_timestamp,
+    primary key (id)
+);
+
+
+
+CREATE TABLE comments(
+	id_comment int auto_increment,
+    postId int,
+    commentCreator varchar(100),
+    creatorEmail varchar(100),
+    body text, 
+    publish_date datetime default current_timestamp,
+    primary key (id_comment),
+    foreign key (postId) references posts(id)
+);
